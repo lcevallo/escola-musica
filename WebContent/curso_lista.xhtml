@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	>
+<h:head>
+	<title>Cursos Registrados</title>
+</h:head>
+	<h:body>
+
+		<p:panel header="Lista de Cursos" >
+			<p:dataTable value="#{cursoBean.cursos}" var="curso">
+				<p:column headerText="Nombre">
+					<h:outputText value="#{curso.nome}" />
+				</p:column>
+				
+				<p:column headerText="Duracion">
+					<h:outputText value="#{curso.duracion}" />
+				</p:column>
+				
+				<p:column headerText="Tipo">
+					<h:outputText value="#{curso.tipo}" />
+				</p:column>
+				
+				<p:column headerText="Fecha de creacion">
+					<h:outputText value="#{curso.fechaCreacion}" >
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputText>
+				</p:column>
+			 
+			</p:dataTable>
+		</p:panel>
+
+	</h:body>
+</html>
